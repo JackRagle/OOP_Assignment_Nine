@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Sort {
 	
 	public static int numLines;
+	public static int comparisons = 0;
 	
 	public static int[] createRandomArray(int arrayLength) {
 		
@@ -101,6 +102,7 @@ public class Sort {
 				j++;
 			}
 			k++;
+			comparisons++;
 		}
 		
 		while(i < leftArraySize) {
@@ -115,6 +117,21 @@ public class Sort {
 			k++;
 		}
 		
+	}
+	
+	public static int[] bubbleSort(int[] array) {
+		int[] arraySorted = new int[array.length];
+		for(int i = 0; i < array.length; i++) {
+			int placement = 0;
+			for(int j = 0; j < array.length; j++) {
+				if(array[i] > array[j]) {
+					placement++;
+					comparisons++;
+				}
+			}
+			arraySorted[placement] = array[i];
+		}
+		return arraySorted;
 	}
 	
 }

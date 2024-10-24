@@ -40,6 +40,13 @@ public class MergeSortInAction {
 			System.out.println(array[i]);
 		}
 		
+		int comparisons = Sort.comparisons;
+		System.out.println("Merge sort required " + comparisons + " computations to sort the array.");
+		Sort.comparisons = 0;
+		array = Sort.bubbleSort(array);
+		comparisons = Sort.comparisons;
+		System.out.println("Bubble sort required " + comparisons + " computations to sort the array.");
+		
 		Sort.writeArrayToFile(array, "output.txt");
 		System.out.println("The sorted array has been recorded in the file: 'output.txt'.");
 		
